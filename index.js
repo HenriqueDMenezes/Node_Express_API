@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-
-
+import userRouter from './routes/users.js';
 
 const app = express();
 const PORT = 5000;
@@ -14,4 +13,7 @@ app.get('/',(req,res) =>{
 });
 
 
+app.use('/users',userRouter)
+
 app.listen(PORT,() => console.log(`Server Running on port: http://localhost:${PORT}`))
+
